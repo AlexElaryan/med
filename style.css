@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: .2s;
 }
 
 a {
@@ -155,7 +156,7 @@ button {
     color: #136AEC;   
 }
 
-header {
+.homeCont header {
     padding: 10px;
     width: 100%;
     display: flex;
@@ -165,12 +166,12 @@ header {
     border-radius: 16px;
 }
 
-header nav {
+.homeCont header nav {
     width: 100%;
     padding-right: 50px;
 }
 
-header ul {
+.homeCont header ul {
     width: 100%;
     display: flex;
     align-items: center;
@@ -178,20 +179,20 @@ header ul {
     list-style: none;
 }
 
-header ul li.liActive {
+.homeCont header ul li.liActive {
     background: #136AEC;
     border-radius: 8px;
     padding: 14px 30px 14px 24px;   
 }
 
-header ul li.liActive a {
+.homeCont header ul li.liActive a {
     color: #fff;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-header ul li a {
+.homeCont header ul li a {
     text-decoration: none;
     font-family: Inter;
     font-size: 15px;
@@ -289,6 +290,7 @@ header ul li a {
 }
 
 .appointmentItem-bottom p {
+    text-align: center;
     font-family: Inter;
     font-size: 15px;
     font-weight: 400;
@@ -302,7 +304,7 @@ header ul li a {
     left: 60px !important;
 }
 
-.swiper-pagination-bullet {
+.swiper-container-appointment .swiper-pagination-bullet {
     width: 10px !important;
     height: 10px !important;
     background: #E5E8EC !important;
@@ -310,7 +312,7 @@ header ul li a {
     opacity: 1 !important;
 }
 
-.swiper-pagination-bullet-active {
+.swiper-container-appointment .swiper-pagination-bullet-active {
     width: 40px !important;
     background: #136AEC !important;
 }
@@ -427,7 +429,7 @@ button.signup {
     gap: 80px;
 }
 
-h2 {
+.homeCont h2 {
     font-family: Inter;
     font-size: 40px;
     font-weight: 700;
@@ -845,7 +847,9 @@ h2 {
     border: none;
     background: #FFFFFFCC;
     border-radius: 500px;
+    transition: .2s;
 }
+
 
 /*  */
 
@@ -1110,7 +1114,7 @@ h2 {
 
 /* footer start */
 
-footer {
+.home-footer {
     display: flex;
     justify-content: space-between;
     background: #242B34;
@@ -1161,14 +1165,14 @@ footer {
     gap: 122px;
 }
 
-footer ul {
+.home-footer ul {
     display: flex;
     flex-direction: column;
     gap: 15px;
     list-style: none;
 }
 
-footer ul li a {
+.home-footer ul li a {
     font-family: Inter;
     font-size: 15px;
     font-weight: 400;
@@ -1177,6 +1181,7 @@ footer ul li a {
 }
 
 .navigation {
+    transition: .2s;
     width: fit-content;
     display: flex;
     align-items: center;
@@ -1287,11 +1292,392 @@ footer ul li a {
     border-radius: 8px;
 }
 
-/* footer end */
+/* .home-footerend */
 .forServicesMb , .burgerMenu {
     display: none;
 }
 
+.swiper-container-appointment .swiper-pagination-bullet {
+    position: relative;
+}
+
+.swiper-container-appointment .swiper-pagination-bullet:hover {
+    border: 1px solid #136AEC;
+}
+
+.swiper-container-appointment .swiper-pagination-bullet::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 5px;
+    height: 5px;
+    background: #136AEC;
+    opacity: 0;
+    transition: .2s;
+}
+
+.swiper-container-appointment .swiper-pagination-bullet:hover::after {
+    opacity: 1;
+}
+
+
+.forMob {
+    display: none;
+}
+
+.footer-info-item-call {
+    display: none;
+}
+.navigationDesktop {
+    display: none;
+} 
+
+.stock-container-mobile {
+    display: none;
+}
+
+.spcMoreMobile {
+    display: none;
+}
+
+/* .mobile-navigate */
+
+
+.mobile-navigate {
+    width: calc(100% - 60px);
+    box-shadow: 0px 0px 30px 10px #829ABC40;
+    display: none;
+    align-items: center;
+    gap: 5px;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 16px;
+    position: fixed;
+    margin: unset;
+    left: 10px;
+    background: #fff;
+    bottom: 20px;
+    z-index: 111;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.mobile-navigate button {
+    padding: 18px;
+    background: transparent;
+    border-radius: 8px;
+    border: 1px solid #E5E8EC;
+}
+.mobile-navigate-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.header-mobile-search {
+    padding-top: 15px;
+    width: 100%;
+    display: none;
+    background: #fff;
+    align-items: center;
+    gap: 10px;
+}
+
+.mobile-search {
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    display: none;
+    background: #fff;
+    padding: 0px 40px;
+    align-items: center;
+    gap: 10px;
+}
+
+.close-mobile-search {
+    padding: 16px;
+    background: #fff;
+    border: 1px solid #E5E8EC;
+    border-radius: 8px;
+}
+
+.mobile-search-input {
+    width: 100%;
+    border: 1px solid #E5E8EC;
+    border-radius: 8px;
+    position: relative;
+}
+
+.mobile-search-input input {
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding: 18px 24px 18px 24px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    border-radius: 8px;
+    color: #B3BCC9;
+}
+
+.mobile-search-input input::placeholder {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    color: #B3BCC9;
+}
+
+.mobile-search-input svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 24px;
+}
+
+/* .mobile-navigate */
+
+.homeCont header ul li {
+    cursor: pointer;
+}
+
+/* hover start */
+
+
+.whywe-bottom-video-play:hover {
+    background: #3E8BFF;
+}
+
+.whywe-bottom-video-play:hover svg path {
+    fill: white;
+}
+
+.whatsapp , .telegram {
+    transition: .2s;
+}
+
+.whatsapp:hover {
+    background: #25D366;
+}
+
+.whatsapp:hover svg path {
+    stroke: white;
+}
+
+.telegram:hover {
+    background: #27A7E7;
+}
+
+.telegram:hover svg path {
+    stroke: white;
+}
+
+.wk:hover {
+    background: #0077FF;
+}
+
+.wk:hover svg path {
+    stroke: white;
+}
+
+
+.navigation:hover {
+    border: 1px solid #3E8BFF;
+    color: #3E8BFF;
+}
+
+.mobButtonsForHover {
+    transition: .2s;
+    cursor: pointer;
+}
+
+
+
+.moreDetails:hover {
+    background: #0077FF;
+    color: #fff;
+    border: 1px solid transparent;
+}
+.mobButtonsForHover:hover , .more:hover {
+    background: #0077FF;
+    color: #fff;
+}
+
+.mobButtonsForHover:hover svg path , .more:hover svg path {
+    stroke: white;
+}
+
+.homeCont header ul li.liActive:hover {
+    background: #3E8BFF;
+}
+
+.mobButtonsForHoverCall h4 , .mobButtonsForHoverCall:hover p {
+    display: none;
+}
+@media screen and (min-width:840px) {
+    .mobButtonsForHoverCall:hover h4 {
+        display: block;
+        width: 164px;
+        color: #fff;
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20.3px;
+        text-transform: uppercase;
+    }
+    
+    .mobButtonsForHoverCall:hover {
+        justify-content: center;
+        gap: 10px;
+        background: #3E8BFF;
+        height: 62.6px;
+    }
+    
+    
+    .mobButtonsForHoverCall:hover svg path {
+        stroke: white;
+    }
+}
+
+@media screen and (max-width:840px) {
+    .for-search,.mobButtonsForHoverCall {
+        transition: .2s;
+        cursor: pointer;
+    }
+    
+    .for-search:hover , .mobButtonsForHoverCall:hover {
+        background: #0077FF;
+    }
+    
+    .for-search:hover svg path , .mobButtonsForHoverCall:hover svg path{
+        stroke: white;
+    }
+}
+
+button.signup:hover {
+    color: #0077FF;
+    background: transparent;
+    border: 1px solid #0077FF;
+}
+
+
+/* hover end */
+
+/* burger menu start*/
+
+.burger-menu-block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 30px 40px;
+    background: #fff;
+    z-index: 111;
+    display: none;
+    flex-direction: column;
+    gap: 30px;
+    overflow: auto;
+}
+
+.burger-menu-block-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.burger-menu-close {
+    padding: 13px;
+    border: 1px solid #E5E8EC;
+    border-radius: 8px;
+}
+
+.burger-menu-block nav {
+    padding: 45px 50px;
+    border: 1px solid #E5E8EC;
+    border-radius: 16px;
+}
+
+.burger-menu-block nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 30px;
+}
+
+.burger-menu-block nav ul li a {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 29px;
+    color: #1D2229;    
+}
+
+.burger-menu-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.burger-menu-bottom-item {
+    padding: 23px 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border: 1px solid #E5E8EC;
+    border-radius: 8px;
+}
+
+.burger-menu-bottom-item > div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.burger-menu-bottom span {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.8px;
+    color: #B3BCC9;    
+}
+
+.burger-menu-bottom p {
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 21px;
+    color: #5C646E;        
+}
+
+.burger-menu-block .header-top-line-right .mobButtonsForHover {
+    width: 181px;
+}
+.burger-menu-block > .header-top-line-right {
+    display: none;
+}
+
+@media screen and (max-width:500px) {
+    .burger-menu-block-top .header-top-line-right {
+        display: none;
+    }
+    .burger-menu-block > .header-top-line-right {
+        display: flex;
+        flex-direction: column;
+    }
+    .burger-menu-block .header-top-line-right .mobButtonsForHover {
+        width: 100%;
+    }
+    .burger-menu-bottom {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+
+/* burger menu end*/
 
 
 /* responsive start */
@@ -1456,8 +1842,9 @@ footer ul li a {
     }
     .footer-right {
         padding: 40px 30px;
+        justify-content: space-between;
     }
-    footer {
+    .home-footer{
         flex-direction: column-reverse;
     }
     .swiper-container-specialists, .swiper-container-patient {
@@ -1537,6 +1924,9 @@ footer ul li a {
     .patient .more {
         width: 165px;
     }
+    .appointmentItem {
+        background-position: unset;
+    }
 }
 
 @media screen and (max-width:900px) {
@@ -1562,6 +1952,9 @@ footer ul li a {
 }
 
 @media screen and (max-width:840px) {
+    .appointmentItem {
+        background-position: right;
+    }
     .header-top-line-left div {
         display: none !important;
     }
@@ -1624,7 +2017,7 @@ footer ul li a {
     .burgerMenu {
         grid-column: 5/6;
     }
-    header {
+    .homeCont header {
         display: none;
     }
     .appointment {
@@ -1714,6 +2107,515 @@ footer ul li a {
         flex-direction: row-reverse;
         justify-content: space-between;
         padding-top: 100px;
+    }
+    .appointmentItem-bottom > div {
+        border-radius: 0px;
+        background: transparent;
+    }
+    .appointmentItem-bottom  {
+        background: #fff;
+        border-radius: 12px;
+        gap: 0px;
+    }
+    .appointmentItem {
+        padding: 40px;
+        padding-bottom: 100px;
+    }
+    
+    .swiper-pagination-appointment {
+        bottom: 80px !important;
+    }
+    .appointment-block h2 {
+        font-size: 34px;
+        margin-left: -70px;
+    }
+    .appointment-block .free {
+        top: 55px;
+        right: 110px;
+    }
+}
+
+@media screen and (max-width:710px) {
+    .appointment-block h2 {
+        width: fit-content;
+        margin: unset;
+        font-size: 30px;
+    }
+    .appointment-block .free {
+        right: 30px;
+    }
+    .header-middle-line {
+        gap: 10px;
+    }
+    .container {
+        padding: 20px;
+    }
+    .swiper-container-specialists, .swiper-container-patient {
+        margin-right: -20px;
+        width: calc(100% + 20px);
+    }
+    .smile-item span {
+        font-size: 12px;
+    }
+    .footer-left p:nth-of-type(1) {
+        width: fit-content;
+        max-width: 267px;
+        right: 10px;
+    }
+}
+
+@media screen and (max-width:640px) {
+    .mobile-search {
+        padding: 15px;
+        left: 30px;
+        width: calc(100% - 60px);
+    }
+    .mobile-navigate {
+        display: flex;
+    }
+    .header-top-line-left {
+        display: none;
+    }
+    .header-top-line .header-top-line-right {
+        width: 100%;
+        padding: 10px;
+        border-radius: 16px;
+        box-shadow: 0px 0px 30px 0px #829ABC40;
+    }
+    .header-top-line-right button {
+        width: 50%;
+        justify-content: center;
+    }
+    .header-middle-line {
+        display: none;
+    }
+    .appointmentItem-bottom {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: -155px;
+        border-radius: 0px 0px 24px 24px;
+        background: #F0F4FA;
+        padding: 20px;
+    }
+    .appointmentItem-bottom > div {
+        flex-direction: column;
+        text-align: center;
+    }
+    .swiper-pagination-appointment {
+        bottom: 205px !important;
+        left: 40px !important;
+    }
+    .appointment-block {
+        background: #F8FAFD;
+        max-height: unset;
+        min-height: 550px;
+        display: flex;
+        flex-direction: column;
+    }
+    .appointment .signup {
+        text-align: center;
+    }
+   
+    .sercices-block {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .services-item {
+        align-items: center;
+        flex-direction: row;
+    }
+    .services-item > img {
+        object-fit: cover;
+        width: 140px;
+        height: 140px;
+    }
+    .services-item-bottom {
+        flex-direction: row;
+        align-items: center;
+    }
+    .services-item-left {
+        max-width: 300px;
+
+    }
+    .smile-left {
+        padding-top: 60px;
+    }
+    .smile-middle {
+        top: calc(100% + 50px);
+        grid-template-columns: 1fr;
+    }
+    .smile-item {
+        flex-direction: row;
+    }
+    .mission {
+        padding-top: 500px;
+    }
+    .whywe-bottom {
+        padding-top: 120px;
+    }
+    .homeCont h2 {
+        font-size: 32px;
+    }
+    .license-filter {
+        display: none;
+    }
+    .stock {
+        gap: 50px;
+    }
+    .patient {
+        padding-top: 60px;
+        gap: 40px;
+        padding-bottom: 70px;
+    }
+    .footer-right {
+        flex-direction: column;
+    }
+    .footer-right nav {
+        padding: 30px;
+        border: 1px solid #2F3741;
+        border-radius: 8px;
+    }
+    .footer-right nav ul li:nth-of-type(2) {
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+    .footer-right nav ul li:nth-of-type(3) {
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+    .footer-right nav ul li:nth-of-type(5) {
+        grid-row: 2/3;
+        grid-column: 2/3;
+    }
+    .footer-right nav ul li:nth-of-type(6) {
+        grid-row: 3/4;
+        grid-column: 2/3;
+    }
+    .home-footer ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .footer-right ul li.forMob {
+        display: block;
+    }
+    .footer-left > img ,.footer-left span{
+        display: none;
+    }
+    .footer-contact-top h4 {
+        display: none;
+    }
+
+    .footer-info-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        
+    }
+    .footer-info-item {
+        border-radius: 8px;
+        border: 1px solid #2F3741;
+        padding: 15px;
+    }
+    .footer-left p:nth-of-type(1) {
+        display: none;
+    }
+
+    .footer-left {
+        background: transparent;
+        padding-top: 0px;
+    }
+    .footer-info-item-call {
+        display: flex;
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+    .navigationMobile {
+        display: flex;
+    }
+    .footer-contact-top {
+        flex-direction: row;
+        gap: 30px;
+    }
+    .footer-contact span {
+        display: none;
+    }
+    .footer-contact-socset {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+    .home-footer {
+        position: relative;
+    }
+    .footer-left > div {
+        flex-direction: column;
+        text-align: left;
+        width: fit-content;
+        padding-top: 0px;
+    }
+    .footer-contact {
+        gap: 0px;
+    }
+    .homeCont h2 {
+        font-size: 26px;
+    }
+    .mobile-navigate-left {
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .burger-menu-block {
+        padding: 30px 20px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .appointmentItem {
+        padding: 30px;
+        min-height: 502px;
+        background: url('img/centerBgMobile.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        align-items: center;
+    }
+    .appointmentItem-bottom {
+        top: calc(100% + 82px);
+        bottom: unset;
+        flex-direction: column;
+        background: unset;
+        gap: 20px;
+    }
+    .appointmentItem-bottom > div {
+        width: 100%;
+        flex-direction: row;
+        padding: 15px;
+        gap: 20px;
+        border-radius: 16px;
+        border: 1px solid #E5E8EC;
+    }
+    .appointmentItem-bottom p {
+        width: 100%;
+        text-align: left;
+    }
+    .appointment h1 {
+        text-align: center;
+        font-size: 24px;
+    }
+    .appointmentItem-top {
+        align-items: center;
+    }
+    .swiper-pagination-appointment {
+        top: calc(50% + 50px) !important;
+        bottom: unset !important;
+        left: 50% !important;
+        transform: translateX(-50%);
+    }
+    .swiper-container-appointment {
+        min-height: 950px;
+    }
+    
+    .appointment {
+        gap: 0px;
+    }
+    .appointment-block {
+        padding-top: 70px;
+        gap: 15px;
+        align-items: center;
+    }
+    .appointment-block .free {
+        position: unset;
+    }
+    .appointment .signup {
+        display: flex;
+        justify-content: center;
+    }
+    .mobile-navigate button {
+        padding: 12px;
+    }
+    .mobile-navigate-left {
+        gap: 15px;
+    }
+    .stockK .stock-top > div > div {
+        display: none;
+    }
+    .swiper-container-stock {
+        display: none;
+    }
+    .stock-container-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .stock-item {
+        width: 100%;
+    }
+    .stock-top .more {
+        display: none;
+    }
+    .stock-container-mobile .more {
+        width: 100%;
+        justify-content: center;
+    }
+    .services-item {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+    .services-item-bottom p {
+        font-size: 20px;
+    }
+    
+    .homeCont h2 {
+        font-size: 32px;
+    }
+    .services-item-top h2 {
+        font-size: 20px;
+    }
+    .smile-left {
+        min-height: 640px;
+        background: url('img/smileBgMobile.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .smile-bottom button.moreDetails {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .smile-bottom button.signup {
+        width: 100%;
+        text-align: center;
+    }
+    .smile-bottom-right {
+        width: 100%;
+    }
+    .smile-bottom-left {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .smile-left {
+        gap: 20px;
+    }
+    .whywe-top > div {
+        flex-direction: column;
+    }
+    .whywe-bottom {
+        flex-direction: column;
+    }
+    .whywe-bottom-forVideo {
+        min-height: 280px;
+    }
+    .whywe-reviews span {
+        font-size: 15px;
+    }
+    .specialistsItem > div {
+        width: 100%;
+    }
+    .specialistsItem > img {
+        position: absolute;
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+        top: 0;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+    }
+    .specialistsItem {
+        position: relative;
+        padding-top: 90px;
+    }
+    .swiper-container-specialists {
+        padding-top: 70px;
+    }
+    .specialistsItem > div > div {
+        justify-content: center;
+        align-items: center;
+    }
+    .specialistsItem h3 {
+        text-align: center;
+    }
+    .specialists button.signup {
+        width: 100%;
+        text-align: center;
+    }
+    .spcMoreMobile {
+        margin-top: -10px;
+        display: flex;
+        justify-content: center;
+    }
+    .comment-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .comment {
+        max-height: 330px;
+    }
+    .comment > p {
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+    }
+    .comment .comment-open {
+        overflow: auto;
+    }
+    .patient .more {
+        width: 100%;
+    }
+    .home-footer ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 20px;
+        row-gap: 15px;
+    }
+    .home-footer ul li {
+        width: calc(50% - 10px);
+    }
+    .footer-info-block {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;    
+    }
+    .footer-info-item-call {
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+    .footer-contact-top {
+        flex-direction: column;
+    }
+    .footer-contact-top button {
+        justify-content: center;
+        text-align: center;
+    }
+    .footer-contact-top button {
+        margin: unset;
+        gap: 20px;
+    }
+    .footer-contact-socset {
+        position: unset;
+    }
+    .footer-contact-bottom {
+        padding-top: 20px;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .footer-left > div {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width:415px) {
+    .mobile-navigate-left {
+        gap: 5px;
+    }
+    .mobile-navigate {
+        width: calc(100% - 40px);
     }
 }
 
