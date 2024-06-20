@@ -239,3 +239,18 @@ burgerMenuOpen.forEach(el => {
 burgerMenuClose.onclick = () => {
     burgerMenu.style.display = 'none';
 }
+
+// service popup
+
+let popupopenBtn = document.querySelector('.liActive');
+let popupChild1 = document.querySelector('.home-popup-services');
+
+popupopenBtn.onclick = () => {
+    popupChild1.classList.add('home-popup-services-open');
+}
+
+document.addEventListener('click', (event) => {
+    if (!popupChild1.contains(event.target) && event.target !== popupopenBtn) {
+        popupChild1.classList.remove('home-popup-services-open');
+    }
+});

@@ -157,6 +157,7 @@ button {
 }
 
 .homeCont header {
+    position: relative;
     padding: 10px;
     width: 100%;
     display: flex;
@@ -171,7 +172,7 @@ button {
     padding-right: 50px;
 }
 
-.homeCont header ul {
+.homeCont header nav > ul {
     width: 100%;
     display: flex;
     align-items: center;
@@ -1384,14 +1385,16 @@ button.signup {
 }
 
 .mobile-search {
-    width: 100%;
-    position: absolute;
-    top: 20px;
+    width: calc(100% - 60px);
+    border-radius: 16px;
+    position: fixed;
+    bottom: 20px;
     display: none;
     background: #fff;
     padding: 0px 40px;
     align-items: center;
     gap: 10px;
+    z-index: 1111;
 }
 
 .close-mobile-search {
@@ -1678,6 +1681,64 @@ button.signup:hover {
 
 
 /* burger menu end*/
+
+/* services popup start */
+
+.home-popup-services > li:hover > ul  , .home-popup-services-child > li:hover > ul {
+    display: flex;
+}
+
+.home-popup-services , .home-popup-services-child , .home-popup-services-child-child {
+    width: 298px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #E5E8EC;
+    padding: 22px 0px;
+    /* gap: 12px; */
+    border-radius: 16px;
+    z-index: 111;
+    display: none;
+}
+
+.home-popup-services-open {
+    display: flex;
+}
+
+.home-popup-services li {
+    padding: 6px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 21.75px;
+    color: #1D2229;   
+}
+
+.home-popup-services > li:hover , .home-popup-services-child > li:hover , .home-popup-services-child-child > li:hover {
+    color: #3E8BFF;
+}
+
+.home-popup-services > li:hover > svg > path , .home-popup-services-child > li:hover svg path , .home-popup-services-child-child > li:hover > svg > path {
+    stroke: #3E8BFF;
+}
+
+.home-popup-services-child , .home-popup-services-child-child {
+    top: 0;
+    left: 100%;
+    border-radius: 0px 0px 16px 16px;
+}
+
+.home-popup-services-child-child {
+    top: -1px;
+}
+
+/* services popup end */
 
 
 /* responsive start */
