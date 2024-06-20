@@ -206,9 +206,19 @@ let closeSearch = document.querySelectorAll('.close-mobile-search');
 let searchMobile = document.querySelector('.mobile-search-btn');
 let searchMobileBlock = document.querySelector('.mobile-search');
 
+let isSLOpen = false;
+// let isSLMOpen = false;
+
 searchLaptop.onclick = () => {
     if (window.innerWidth <= 840) {
-        headerSearchLaptop.style.display = 'flex';
+        if (!isSLOpen) {
+            headerSearchLaptop.style.display = 'flex';
+            isSLOpen = true;
+        }
+        else if (isSLOpen) {
+            headerSearchLaptop.style.display = 'none';
+            isSLOpen = false;
+        }
     }
 }
 
@@ -219,12 +229,13 @@ searchMobile.onclick = () => {
 closeSearch.forEach(el => {
     el.onclick = () => {
         headerSearchLaptop.style.display = 'none';
+        isSLOpen = false;
         searchMobileBlock.style.display = 'none';
     }
 })
 
 
-// burger menu
+// burger menu start
 
 let burgerMenu = document.querySelector('.burger-menu-block');
 let burgerMenuClose = document.querySelector('.burger-menu-close');
@@ -240,17 +251,85 @@ burgerMenuClose.onclick = () => {
     burgerMenu.style.display = 'none';
 }
 
-// service popup
+// burger menu end
 
-let popupopenBtn = document.querySelector('.liActive');
-let popupChild1 = document.querySelector('.home-popup-services');
+// services menu start
 
-popupopenBtn.onclick = () => {
-    popupChild1.classList.add('home-popup-services-open');
+let servicesMenu = document.querySelector('.mobile-services-popup');
+let servicesMenuOpen = document.querySelectorAll('.forServicesMb');
+let servicesMenuClose = document.querySelector('.close-services-popup');
+let servicesMenuBlock = document.querySelector('.mobile-services-popup > ul');
+let servicesMenuPrev = document.querySelector('.mobile-services-popup-prev');
+
+let menuStack = [];
+
+function attachOptionClickListeners() {
+    let servicesMenuOptions = document.querySelectorAll('.mobile-services-popup > ul li');
+    servicesMenuOptions.forEach((opt) => {
+        opt.onclick = (event) => {
+            event.stopPropagation(); 
+            let optChildBlock = opt.querySelector('ul');
+            if (optChildBlock) {
+                menuStack.push(servicesMenuBlock.innerHTML);
+                servicesMenuPrev.style.display = 'flex';
+                servicesMenuBlock.innerHTML = optChildBlock.innerHTML;
+                attachOptionClickListeners(); 
+            }
+        }
+    });
 }
 
-document.addEventListener('click', (event) => {
-    if (!popupChild1.contains(event.target) && event.target !== popupopenBtn) {
-        popupChild1.classList.remove('home-popup-services-open');
+servicesMenuPrev.onclick = () => {
+    if (menuStack.length > 0) {
+        servicesMenuBlock.innerHTML = menuStack.pop();
+        attachOptionClickListeners(); 
+    }
+    if (menuStack.length === 0) {
+        servicesMenuPrev.style.display = 'none';
+    }
+}
+
+// Open services menu
+servicesMenuOpen.forEach(btn => {
+    btn.onclick = (event) => {
+        event.preventDefault(); 
+        servicesMenu.style.display = 'flex';
+        attachOptionClickListeners(); 
     }
 });
+
+// Close services menu
+servicesMenuClose.onclick = (event) => {
+    event.preventDefault();
+    servicesMenu.style.display = 'none';
+    servicesMenuBlock.innerHTML = menuStack.length > 0 ? menuStack[0] : '';
+    menuStack = [];
+    servicesMenuPrev.style.display = 'none';
+}
+
+attachOptionClickListeners();
+
+// services menu end
+
+
+// for submit buttons start
+
+
+function checkWindowSize() {
+    const button = document.getElementById('forSearchSubmit');
+    if (window.innerWidth <= 840) {
+        button.type = 'button';
+    } else {
+        button.type = 'submit';
+        headerSearchLaptop.style.display = 'none';
+        isSLOpen = false;
+    }
+}
+
+// Initial check
+checkWindowSize();
+
+// Add event listener for window resize
+window.addEventListener('resize', checkWindowSize);
+
+// for submit buttons end
