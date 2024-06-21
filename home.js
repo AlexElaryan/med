@@ -333,3 +333,20 @@ checkWindowSize();
 window.addEventListener('resize', checkWindowSize);
 
 // for submit buttons end
+
+
+// videp start
+
+document.getElementById('play-button').addEventListener('click', function() {
+    var iframe = document.getElementById('youtube-video');
+    var src = iframe.src;
+    if (!src.includes("autoplay=1")) {
+        iframe.src = src + "&autoplay=1";
+    }
+    this.style.display = 'none';
+});
+
+
+
+
+// videp end

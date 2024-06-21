@@ -155,8 +155,8 @@ button {
 }
 
 .header-middle-line button p {
-    width: 164px;
-    max-width: 164px;
+    /* width: 164px; */
+    min-width: 164px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -166,6 +166,10 @@ button {
     font-weight: 600;
     line-height: 24.3px;
     color: #1D2229;
+}
+
+.mobButtonsForHoverCall {
+    min-height: 63px;
 }
 
 .header-middle-line button p span {
@@ -439,7 +443,7 @@ button.signup {
     color: #fff;
     background: #136AEC;
     border-radius: 8px;
-    border: none;
+    border: 1px solid transparent;
     padding: 22px 50px;    
 }
 
@@ -861,9 +865,10 @@ button.signup {
     position: relative;
 }
 
-.whywe-bottom video {
+.whywe-bottom iframe {
     width: 100%;
     height: 100%;
+    border-radius: 24px;
 }
 
 .whywe-bottom-video-play {
@@ -873,9 +878,13 @@ button.signup {
     transform: translateY(-50%) translateX(-50%);
     padding: 28px;
     border: none;
-    background: #FFFFFFCC;
+    background: #FFFFFF;
     border-radius: 500px;
     transition: .2s;
+}
+
+.ytp-large-play-button {
+    display: none !important;
 }
 
 
