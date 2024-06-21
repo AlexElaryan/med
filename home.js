@@ -339,7 +339,7 @@ window.addEventListener('resize', checkWindowSize);
 
 document.getElementById('play-button').addEventListener('click', function() {
     var iframe = document.getElementById('youtube-video');
-    var src = iframe.src;
+    var src = "https://www.youtube.com/embed/F7JBhOWjz_c?enablejsapi=1";
     if (!src.includes("autoplay=1")) {
         iframe.src = src + "&autoplay=1";
     }

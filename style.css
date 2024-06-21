@@ -883,7 +883,7 @@ button.signup {
     transition: .2s;
 }
 
-.ytp-large-play-button {
+iframe .ytp-large-play-button {
     display: none !important;
 }
 
