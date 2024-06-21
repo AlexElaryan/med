@@ -339,11 +339,13 @@ window.addEventListener('resize', checkWindowSize);
 
 document.getElementById('play-button').addEventListener('click', function() {
     var iframe = document.getElementById('youtube-video');
+    let videoBg = document.querySelector('.whywe-bottom-forVideo');
     var src = "https://www.youtube.com/embed/F7JBhOWjz_c?enablejsapi=1";
     if (!src.includes("autoplay=1")) {
         iframe.src = src + "&autoplay=1";
     }
     this.style.display = 'none';
+    videoBg.style.background= 'none';
 });
 
 
