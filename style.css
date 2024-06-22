@@ -155,8 +155,7 @@ button {
 }
 
 .header-middle-line button p {
-    /* width: 164px; */
-    min-width: 164px;
+    /* min-width: 164px; */
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -166,6 +165,12 @@ button {
     font-weight: 600;
     line-height: 24.3px;
     color: #1D2229;
+}
+
+@media screen and (min-width:840px) {
+    .mobButtonsForHoverCall {
+        min-width: 240px;
+    }
 }
 
 .mobButtonsForHoverCall {
@@ -2148,7 +2153,7 @@ button.signup:hover {
     }
 }
 
-@media screen and (max-width:940px) {
+@media screen and (max-width:945px) {
     .header-top-line-right button {
         font-size: 12px;
     }
@@ -2179,7 +2184,20 @@ button.signup:hover {
         max-width: 520px;
         bottom: 25px;
     }
+
+    .header-top-line-right {
+        gap: 10px;
+    }
+    .header-top-line span {
+        font-size: 10px;
+    }
+    .header-top-line-right button {
+        font-size: 10px;
+    }
    
+    .homeCont header ul li a {
+        font-size: 12px;
+    }
 }
 
 @media screen and (max-width:840px) {
