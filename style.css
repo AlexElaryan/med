@@ -1598,6 +1598,10 @@ iframe .ytp-large-play-button {
     .mobButtonsForHoverCall:hover svg path {
         stroke: white;
     }
+
+    .header-middle-line > button {
+        padding: unset;
+    }
 }
 
 @media screen and (min-width:840px) and (max-width:860px){
